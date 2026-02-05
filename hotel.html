@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Food Website</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<style>
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <nav>
+        <ul class="menu">
+            <li>
+                Home
+                <ul class="submenu">
+                    <li>Overview</li>
+                    <li>Chef’s Choice</li>
+                    <li>Today’s Special</li>
+                </ul>
+            </li>
+
+            <li>
+                Order
+                <ul class="submenu">
+                    <li>Order Online</li>
+                    <li>Bulk Orders</li>
+                    <li>Track Order</li>
+                </ul>
+            </li>
+
+            <li>
+                Food
+                <ul class="submenu">
+                    <li>Veg</li>
+                    <li>Non-Veg</li>
+                    <li>Desserts</li>
+                    <li>Beverages</li>
+                </ul>
+            </li>
+
+            <li>
+                Restaurant
+                <ul class="submenu">
+                    <li>About Us</li>
+                    <li>Our Chefs</li>
+                    <li>Ambience</li>
+                </ul>
+            </li>
+
+            <li>
+                Testimonials
+                <ul class="submenu">
+                    <li>Customer Reviews</li>
+                    <li>Ratings</li>
+                    <li>Press Mentions</li>
+                </ul>
+            </li>
+
+            <li>
+                Contact Us
+                <ul class="submenu">
+                    <li>Location</li>
+                    <li>Reservations</li>
+                    <li>Support</li>
+                </ul>
+            </li>
+        </ul>
+         <div style="font-size:26px; cursor:pointer;">☰</div>
+        
+    </nav>
+</header>
+
+
+<!-- OFFER OF THE DAY BOX -->
+<!-- OFFER SLIDER -->
+<!-- OFFER SLIDER -->
+<div class="offer-box">
+    <div class="offer-track">
+        <div class="offer-item">🎉 <span>OFFER OF THE DAY</span> — Flat 30% OFF on all Burgers 🍔 Use Code <b>BURGER30</b></div>
+        <div class="offer-item">🍕 <span>PIZZA DEAL</span> — Buy 1 Get 1 Free Use Code <b>PIZZA50</b></div>
+        <div class="offer-item">🍟 <span>SNACK OFFER</span> — Free Fries above ₹499 Use Code <b>FRIESFREE</b></div>
+        <div class="offer-item">🥤 <span>DRINKS SPECIAL</span> — Flat 20% OFF Use Code <b>DRINK20</b></div>
+    </div>
+</div>
+
+<!-- HERO SECTION -->
+<section class="hero">
+    <div class="hero-text">
+        <h1>LOREM IPSUM</h1>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Vivamus id est vitae dolor rhoncus tristique. Maecenas
+            metus quam, rhoncus euismod lorem in, sollicitudin viverra eros.
+        </p>
+        <button>Click Me</button>
+    </div>
+
+    <div class="hero-image">
+        <img src="pexels-robin-stickel-70497.jpg" alt="Robin-Burger">
+    </div>
+</section>
+<!-- GALLERY SECTION -->
+<section class="gallery-section">
+
+    <!-- LEFT IMAGE GRID -->
+     
+    <div class="gallery">
+        <img src="pexels-rachel-claire-6752433.jpg" alt="Rachel">
+        <img class="big" src="pexels-mister-mister-3434523.jpg" alt="Mister">
+        <img  src="pexels-eva-bronzini-6141651.jpg" alt="Bronzini">
+    </div>
+
+    <!-- RIGHT TEXT CARD -->
+    <div class="text-card">
+        <small>LOREM IPSUM</small>
+        <h2>LOREM IPSUM<br>SET ADEMIR</h2>
+        <a href="#">Click ➜</a>
+    </div>
+
+</section>
+
+
+
+
+
+<script>
+const hamburger = document.querySelector("nav > div");
+const menu = document.querySelector(".menu");
+
+hamburger.addEventListener("click", () => {
+    menu.classList.toggle("active");
+});
+
+document.querySelectorAll(".menu > li").forEach(item => {
+    item.addEventListener("click", (e) => {
+        e.stopPropagation();
+        item.classList.toggle("open");
+    });
+});
+</script>
+
+
+</body>
+</html>

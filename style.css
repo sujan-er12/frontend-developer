@@ -1,0 +1,360 @@
+/* ================= RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* ================= HEADER ================= */
+header {
+    background: #f87676;
+    padding: 15px 40px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* MAIN MENU */
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+
+.menu > li {
+    position: relative;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* SUB MENU */
+.submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    list-style: none;
+    min-width: 180px;
+    padding: 10px 0;
+    display: none;
+    border-radius: 6px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    z-index: 999;
+}
+
+.submenu li {
+    padding: 10px 20px;
+    white-space: nowrap;
+}
+
+.submenu li:hover {
+    background: #f87676;
+    color: #fff;
+}
+
+/* SHOW SUB MENU */
+.menu > li:hover .submenu {
+    display: block;
+}
+
+/* ================= OFFER BAR ================= */
+.offer {
+    background: #ffefc2;
+    padding: 15px;
+    text-align: center;
+    animation: slideDown 1s ease;
+}
+
+.offer span {
+    color: #e63946;
+    font-weight: bold;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* ================= HERO SECTION ================= */
+.hero {
+    display: flex;
+    min-height: 90vh;
+}
+
+.hero-text {
+    width: 50%;
+    padding: 80px;
+    background: linear-gradient(90deg, #fff6b7, #ffd6d6);
+}
+
+.hero-text h1 {
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+.hero-text p {
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+.hero-text button {
+    padding: 12px 30px;
+    border: none;
+    background: #f87676;
+    color: #fff;
+    cursor: pointer;
+}
+
+.hero-image {
+    width: 50%;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ================= GALLERY SECTION ================= */
+.gallery-section {
+    padding: 80px;
+    background: linear-gradient(90deg, #fff1b8, #ffc3f8);
+    display: flex;
+    gap: 60px;
+    align-items: center;
+}
+
+/* IMAGE GRID */
+.gallery {
+    display: grid;
+    grid-template-columns: 280px 460px;
+    grid-template-rows: 240px 240px;
+    gap: 24px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* BIG IMAGE */
+.gallery .big {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+}
+
+/* TEXT CARD */
+.text-card {
+    background: #ff7a7a;
+    padding: 60px;
+    max-width: 450px;
+}
+
+.text-card h2 {
+    font-size: 42px;
+    margin: 20px 0;
+}
+
+/* ================= OFFER SLIDER ================= */
+.offer-box {
+    max-width: 1000px;
+    margin: 30px auto;
+    background: #ff7a7a;
+    border-radius: 12px;
+    overflow: hidden;
+    padding: 16px 0;
+}
+
+/* Moving track */
+.offer-track {
+    display: flex;
+    width: max-content;
+    animation: marquee 30s linear infinite; /* faster (was 30s) */
+}
+
+/* Offer items */
+.offer-item {
+    padding: 0 30px;
+    color: #fff;
+    white-space: nowrap;
+}
+
+.offer-item b {
+    background: #fff;
+    color: #ff4d4d;
+    padding: 4px 10px;
+    border-radius: 6px;
+}
+
+/* Start from left edge and move right → left */
+@keyframes marquee {
+    from {
+        transform: translateX(0);        /* starts at beginning */
+    }
+    to {
+        transform: translateX(-100%);    /* exits fully */
+    }
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+/* Tablet */
+@media (max-width: 992px) {
+    .hero-text {
+        padding: 50px;
+    }
+
+    .gallery-section {
+        flex-direction: column;
+        padding: 50px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 220px 220px;
+    }
+
+    .gallery .big {
+        grid-column: span 2;
+        grid-row: auto;
+        height: 260px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+    }
+
+    .hero {
+        flex-direction: column;
+    }
+
+    .hero-text,
+    .hero-image {
+        width: 100%;
+    }
+
+    .hero-text {
+        text-align: center;
+        padding: 40px 25px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 220px);
+    }
+
+    .gallery .big {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    .text-card {
+        text-align: center;
+        padding: 40px;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .hero-text h1 {
+        font-size: 32px;
+    }
+
+    .offer-item {
+        font-size: 14px;
+    }
+}
+
+
+
+
+
+
+
+
+/* ================= HEADER RESPONSIVE FIX ================= */
+
+/* Hide hamburger on desktop */
+/* ================= HAMBURGER (VISIBLE EVERYWHERE) ================= */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* hamburger always on right */
+nav > div {
+    margin-left: auto;      /* pushes to right */
+    font-size: 26px;
+    cursor: pointer;
+    color: #fff;
+}
+
+
+@media (max-width: 768px) {
+
+    /* Show hamburger */
+    nav > div {
+        display: block;
+        color: #fff;
+    }
+
+    /* MOBILE MENU – RIGHT SIDE */
+    ul.menu {
+        position: absolute;
+        top: 65px;
+        right: 0;            /* ✅ move to right */
+        left: auto;         /* ✅ remove left */
+        width: 280px;       /* optional: neat side menu */
+        background: #f87676;
+        flex-direction: column;
+        display: none !important;
+        z-index: 9999;
+    }
+
+    /* Show menu when active */
+    ul.menu.active {
+        display: flex !important;
+    }
+
+    ul.menu > li {
+        padding: 16px 25px;
+        border-bottom: 1px solid rgba(255,255,255,0.3);
+        color: #fff;
+    }
+
+    /* Disable hover submenu */
+    ul.menu > li:hover .submenu {
+        display: none;
+    }
+
+    /* Mobile submenu */
+    .submenu {
+        position: static;
+        background: #ffd6d6;
+        box-shadow: none;
+        display: none;
+        margin-top: 10px;
+    }
+
+    /* Show submenu on tap */
+    ul.menu > li.open .submenu {
+        display: block;
+    }
+}
